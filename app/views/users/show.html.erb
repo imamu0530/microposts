@@ -6,20 +6,22 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
 
-    <%= form_for(@user) do |f| %>
-      <%= f.label :profile %>
-      <%= f.text_area :profile, class: 'form-control' %>
-
-      <%= f.label :email %>
+      <div>
+      <label>プロフィール</label><br />
+      <%= @user.profile %>
+      </div>
       <br />
+      <div>
+      <label>メールアドレス</label><br />
       <%= @user.email %>
+      </div>
+      <br />
+      <div>
+      <label>エリア</label><br />
+      <%= @user.area %> 
+      </div>
       <br /><br />
-
-      <%= f.label :area %>
-      <%= f.text_field :area, class: 'form-control' %>  
-  
-      <%= f.submit "登録", class: "btn btn-primary" %>
-    <% end %>
+      <%= link_to "編集する" , edit_user_path %>
 
   </div>
 </div>
