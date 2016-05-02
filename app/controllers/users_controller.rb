@@ -46,6 +46,8 @@ before_action :check_user,only: [:edit, :update]
   end
 
   def check_user
-    current_user == @user
+    unless current_user == @user
+      redirect_to root_path
+    end
   end
 end
