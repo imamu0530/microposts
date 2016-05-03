@@ -10,6 +10,5 @@ class User < ActiveRecord::Base
   validates :profile, length: { maximum: 255 }
   validates :area, length: { maximum: 10 }
 
-
-    has_secure_password
+  has_secure_password
 end
