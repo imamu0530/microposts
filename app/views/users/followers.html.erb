@@ -16,12 +16,14 @@
   <div class="col-md-8">
 
       <h3>フォロワー数 (<%= @users.count %>)</h3>
+      <ul>
       <% @users.each do |user| %>
         <li class="follow">
           <%= gravatar_for user %>
           <p><%= link_to user.name, user_path(user.id) %></p>
         </li>
       <% end %>
+      </ul>
 
   </div>
 </div>
