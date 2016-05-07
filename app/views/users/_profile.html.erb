@@ -1,0 +1,21 @@
+   <div>
+      <label>プロフィール</label><br />
+      <%= @user.profile %>
+    </div>
+    <br />
+    <div>
+      <label>メールアドレス</label><br />
+      <%= @user.email %>
+    </div>
+      <br />
+    <div>
+      <label>エリア</label><br />
+      <%= @user.area %> 
+    </div>
+      <br />
+      <div>
+      <label>パスワード</label><br />
+      <%= @user.password %> 
+      </div>
+      <br />
+      <%= link_to "編集する" , edit_user_path, class: 'btn btn-primary' %>

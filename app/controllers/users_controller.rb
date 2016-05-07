@@ -1,10 +1,18 @@
 class UsersController < ApplicationController
-before_action :set_user, only: [:edit,:update]
-before_action :check_user,only: [:edit, :update]
+before_action :set_user, only: [:edit,:update, :followings, :followers]
+before_action :check_user,only: [:edit, :update, :followings, :followers]
 
   def show # 追加
    @user = User.find(params[:id])
    @microposts = @user.microposts.order(created_at: :desc)
+   
+    if current_user == @user
+      @users_ing = current_user.following_users
+      @users_er = current_user.follower_users
+    else
+      @users_ing = @user.following_users
+      @users_er = @user.follower_users
+    end
   end
 
   def new
@@ -35,7 +43,15 @@ before_action :check_user,only: [:edit, :update]
       render 'edit'
     end
   end
-
+  
+  def followings
+    @users = current_user.following_users
+  end
+  
+  def followers
+    @users = current_user.follower_users
+  end
+  
   private
   def user_params
     params.require(:user).permit(:name, :email, :password,
