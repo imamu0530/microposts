@@ -7,7 +7,7 @@
       </h1>
     </section>     
 
-    <%= link_to  @users_ing.count.to_s + " フォロー", followings_user_path(@user.id) %>　<%= link_to @users_er.count.to_s + "フォロワー", followers_user_path(@user.id) %>
+    <%= link_to  @users_ing.count, followings_user_path(@user.id) %>フォロー　<%= link_to @users_er.count, followers_user_path(@user.id) %>フォロワー
 
     <section>
       <%= render 'profile' %>

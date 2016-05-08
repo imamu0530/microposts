@@ -13,9 +13,12 @@
       <%= @user.area %> 
     </div>
       <br />
+    <% if current_user == @user %>
       <div>
-      <label>パスワード</label><br />
-      <%= @user.password %> 
+        <label>パスワード</label><br />
+        <%= @user.password %> 
       </div>
       <br />
+    
       <%= link_to "編集する" , edit_user_path, class: 'btn btn-primary' %>
+    <% end %>
