@@ -1,21 +1,21 @@
    <div>
-      <label>プロフィール</label><br />
+      <label><%= t('view.profile') %></label><br />
       <%= @user.profile %>
     </div>
     <br />
     <div>
-      <label>メールアドレス</label><br />
+      <label><%= t('view.email') %></label><br />
       <%= @user.email %>
     </div>
       <br />
     <div>
-      <label>エリア</label><br />
+      <label><%= t('view.area') %></label><br />
       <%= @user.area %> 
     </div>
       <br />
     <% if current_user == @user %>
       <div>
-        <label>パスワード</label><br />
+        <label><%= t('view.password') %></label><br />
         <%= @user.password %> 
       </div>
       <br />

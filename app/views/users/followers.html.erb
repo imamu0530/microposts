@@ -15,7 +15,7 @@
 
   <div class="col-md-8">
 
-      <h3>フォロワー数 (<%= @users.count %>)</h3>
+      <h3><%= t('view.follower') %>(<%= @users.count %>)</h3>
       <ul>
       <% @users.each do |user| %>
         <li class="follow">
